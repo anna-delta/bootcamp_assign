@@ -1,0 +1,31 @@
+<img src="../../assets/images/tree2.png" class = "login_image" alt="trees_are_important">
+<div class = 'login_page'>
+<div id = 'login_name'>
+        <label id = "name" >Name</label>
+        <form clrForm>
+                <input  clrInput placeholder="What's your name dude" name="name" [(ngModel)] = "person.name" />
+        </form>
+</div>
+        
+        <div class = 'login_password' >
+        <label id = 'password'>Password</label>
+        <form clrForm>
+                <clr-password-container>
+                  <input  clrPassword placeholder="Hit in the keys" name="password" [(ngModel)]="person.password" />
+                </clr-password-container>
+            </form>
+</div>
+
+<div class = 'select_login'>
+<clr-select-container>
+        <label id = 'user_type'>Who are you?</label>
+        <select clrSelect name="options" [(ngModel)]="person.userRole">
+          <option value="viewer">Viewer</option>
+          <option value="admin">Admin</option>
+          <option value="bman">Businness Man</option>
+        </select>
+      </clr-select-container>
+    </div>
+<button class="btn btn-success" id = 'submit' (click) = 'onSignIn()'>Sign Up</button>
+<button  class="btn btn-success" id = 'login' (click) = 'onLogIn()'>Log In</button>
+</div>

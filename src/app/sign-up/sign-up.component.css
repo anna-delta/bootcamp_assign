@@ -1,0 +1,53 @@
+#login_name{
+    position : relative;
+    left : 320px;
+    top : 50px;
+}
+.login_password{
+    position: relative;
+    left : 320px;
+    top : 90px;
+}
+#submit, #login{
+    background-color : #85C81A;
+    border-color: #85C81A;
+}
+.select_login{
+    position: relative;
+    left : 540px;
+    top : 120px;
+}
+#login{
+    position: relative;
+    left : 580px;
+    top : 160px;
+}
+#name, #user_type, #password{
+    color : #85C81A;
+    font-weight: bold;
+}
+#name{
+    position: relative;
+    left : 220px;
+    top : 20px;
+}
+#password{
+    position: relative;
+    left : 220px;
+    bottom : -10px;
+}
+#submit{
+    position: relative;
+    top : 160px;
+    left : 540px;
+}
+.login_page{
+    position: relative;
+    left : 300px;
+    bottom : 450px;
+}
+.login_image{
+    position: relative;
+    top : 80px;
+    left : 60px;
+}

@@ -1,0 +1,29 @@
+<app-category-details></app-category-details>
+<div class="main-container">
+
+    <header class="header header-6">
+        add buttons here that are customized
+    </header>
+
+    <div class="content-container">
+        <div class="content-area">
+            <!--display calender here-->
+            <clr-select-container>
+                    <label>Month</label>
+                    <select clrSelect name="month" [(ngModel)]="selectedMonth" (change) = "displayMonth()">
+                      <option *ngFor = 'let month of months'  [ngValue] = "month" >{{month}}</option>
+                    </select>
+            </clr-select-container>
+            <div *ngFor="let day of ' '.repeat(noDays).split(''), let x = index" class = 'calender'>
+                    <div id="day{{x}}"class = "day">{{x+1}}</div>
+
+            </div>
+        </div>
+        <nav class="sidenav">
+            <!--display category here-->
+            <div class = 'categoryTitle'>
+                Categories 
+            </div>
+        </nav>
+    </div>
+</div>

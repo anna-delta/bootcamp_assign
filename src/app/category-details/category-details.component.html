@@ -1,0 +1,11 @@
+<div class = 'category'>
+<clr-tree>
+    <clr-tree-node *ngFor="let group of groceries"
+                   [(clrSelected)]="group.selected"
+                   [clrExpanded]="true" (clrSelectedChange)="getSelectedItems()">
+        {{group.name}}
+        <clr-tree-node *ngFor="let item of group.items" [(clrSelected)]="item.selected">
+            {{item.name}}
+        </clr-tree-node>
+    </clr-tree-node>
+</clr-tree>

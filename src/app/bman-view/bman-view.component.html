@@ -1,0 +1,71 @@
+<app-category-details></app-category-details>
+<div class="main-container">
+
+    <header class="header header-6">
+      <!--  <button id = "approve"><clr-icon shape="grid-view"></clr-icon></button>-->
+    </header>
+
+    <div class="content-container">
+        <div class="content-area">
+            <!--display calender here-->
+            <clr-select-container>
+                    <label>Month</label>
+                    <select clrSelect name="month" [(ngModel)]="selectedMonth" (change) = "displayMonth()">
+                      <option *ngFor = 'let month of months'  [ngValue] = "month" >{{month}}</option>
+                    </select>
+            </clr-select-container>
+            <div *ngFor="let day of ' '.repeat(noDays).split(''), let x = index" class = 'calender'ngDefaultControl >            
+                        <div id="day{{x}}"class = "day">{{x + 1}}</div>   
+                        <div class = 'eventD' *ngIf = "show(x + 1)" >
+                            <button id = "desc" *ngFor  = "let d of desc, let i = index"(click) = "showEventDetails(d)">{{i + 1}}. {{d}}</button>
+                        </div>
+                        <div ><button id = "add{{x}}" class = "addBtn" (click) = "createEvent(x + 1)"><clr-icon shape="plus-circle" class="is-solid"></clr-icon></button></div>  
+            </div>
+        </div>
+        <nav class="sidenav">
+            <!--display category here-->
+            <div class = 'categoryTitle'>
+                Categories 
+            </div>
+        </nav>
+    </div>
+</div>
+<clr-modal [(clrModalOpen)]="basic">
+    <h3 class="modal-title">Create this event YO</h3>
+    <div class="modal-body">
+        <form clrForm>
+            <label style="color : green; font-weight : bold" >Event Name :  </label>
+            <input id = "descName" clrInput placeholder="Event name" name="eventName" [(ngModel)] = "event.eventName" />
+            <label style = "color: green;font-weight: bold; position : absolute; top : 130px;" >Event Description:</label>
+            <input  id = "descDesc" clrInput placeholder="Describe your event" name="eventDesc" [(ngModel)] = "event.eventDesc" />
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="submitEvent()">Ok</button>
+    </div>
+</clr-modal>
+
+        <clr-modal [(clrModalOpen)]="displayDetails">
+                <h3 class="modal-title">Event Details :</h3>
+                <div class="modal-body">
+                    <img src="../../assets/images/flower2.jpg" id = "eventFlower"class = "login_image" alt="trees_are_important">
+                    <div *ngIf = "eventDetail">
+                    <label id = "eName">Event Name :   </label>
+                    {{eventDetail.eventName}}
+                    <br>
+                    <label id = "eDesc">Event Desc :  </label>
+                            {{eventDetail.eventDesc}}
+                    <br>
+                    <label id = "eDay"> D day :  </label>
+                            {{eventDetail.eventDay}}
+                    <br>
+                    <label id = "eStatus">Event Status :    </label>
+                            {{eventDetail.eventStatus}}
+                    <br>                    
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="displayDetails = false">GOT it</button>
+                </div>
+        </clr-modal>

@@ -1,0 +1,88 @@
+.categoryTitle{ 
+    color : #004A70;
+    text-align : center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.calender{
+    display: inline-flex;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    background : #A6D8E7;
+    width : 130px;
+    height : 130px;
+    text-align : center;
+}
+.day{
+    color : #495A67;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    left : 10px;
+    top : 5px
+}
+.addBtn{
+    background-color:#A6D8E7;
+    border : none;
+    position: relative;
+    top : 5px;
+    left : 20px;
+    height : 20px;
+    width : 20px; 
+}
+.eventD{
+    position: relative;
+    left : 20px;
+    top : 40px;
+    white-space: nowrap; 
+    width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+#desc{
+    background-color:#A6D8E7;
+    border : none;
+    display : block;
+    position: relative;
+    left : 0px;    
+}
+#eName, #eDay, #eStatus, #eDesc{
+    color: green;
+    font-weight: bold;
+}
+#eventFlower{
+    position: absolute;
+    right : 100px;
+}
+#approve{
+    position : relative;
+    right: 20px;
+    top : 15px;
+    background-color : #002438;
+    background-color : white;
+}
+#descName{
+    position: absolute;
+    left : 180px;
+    top : 80px;
+}
+#descDesc{
+    position: absolute;
+    left : 180px;
+    top : 150px;
+}
+#aName, #aDesc, #aDay{
+    color : green;
+}
+#abtn{
+    
+    border :none;
+    background-color: #85C81A;  
+}
+#rbtn{
+    position: relative;
+    background-color: #85C81A;
+    border : none;
+
+}
